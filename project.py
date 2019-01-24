@@ -1,4 +1,3 @@
-print("sweet")
 #import modules to get filepath, to open browser, opening url, creating a request handler, and creating a TCPServer
 import os, webbrowser, urllib.request, http.server, socketserver
 

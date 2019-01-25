@@ -1,13 +1,17 @@
-FROM python:3
+#pull python image
+FROM python:3.6
 
-WORKDIR /project
+#make a working directory called app
+WORKDIR /app
 
-COPY . /project
+#copy contents of source into the app directory
+COPY src ./
 
-EXPOSE 8000
-
+#run the installation of requirements (empty)
 RUN pip install -r requirements.txt
 
-ENV NAME evtWorld
+#expose containers port
+EXPOSE 8000
 
+#run the project script
 CMD ["python", "project.py"]

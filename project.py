@@ -27,5 +27,3 @@ reqHandler = http.server.SimpleHTTPRequestHandler
 with socketserver.TCPServer(("", PORT), reqHandler) as httpd:
 	print("Active at port", PORT)
 	httpd.serve_forever()
-
-#if server stops, remove file

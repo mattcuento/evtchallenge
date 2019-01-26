@@ -1,13 +1,17 @@
-FROM python:3
+#pull python image
+FROM python:3.6
 
-WORKDIR /project
+#make a working directory called app
+WORKDIR /app
 
-COPY . /project
+#copy contents of source into the app directory
+COPY . /app
+COPY start.sh /usr/local/bin
 
-EXPOSE 8000
+#expose containers port
+EXPOSE 8888
 
-RUN pip install -r requirements.txt
+#run the project
+ENTRYPOINT ["/bin/bash", "start.sh"]
 
-ENV NAME evtWorld
-
-CMD ["python", "project.py"]
+#change ip to local host(windows issue)

@@ -5,13 +5,13 @@ FROM python:3.6
 WORKDIR /app
 
 #copy contents of source into the app directory
-COPY src ./
-
-#run the installation of requirements (empty)
-RUN pip install -r requirements.txt
+COPY . /app
+COPY start.sh /usr/local/bin
 
 #expose containers port
-EXPOSE 8000
+EXPOSE 8888
 
-#run the project script
-CMD ["python", "project.py"]
+#run the project
+ENTRYPOINT ["/bin/bash", "start.sh"]
+
+#change ip to local host(windows issue)

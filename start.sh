@@ -8,4 +8,4 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 python3 project.py
 
-python -m webbrowser -t "http://localhost"
+python -m webbrowser -t "http://www.google.com"
